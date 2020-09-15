@@ -1,6 +1,7 @@
 const express=require('express');
 const bodyParser=require('body-parser');
 const app=express();
+const PORT=process.env.PORT || 5000;
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.get('/',function(req,res){
@@ -13,6 +14,4 @@ app.post('/',function(req,res){
     res.send("the sum is : "+sum);
 });
 
-app.listen(5000,function(req,res){
-    console.log("server is running at the port : 5000");
-});
+app.listen(PORT);
